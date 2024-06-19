@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaunaViva - Poraquê</title>
+    <link rel="shortcut icon" href="PIRAPUÃ ofc.png" type="image/x-icon">
+    <style>
+        jl {
+            margin: auto;
+            text-decoration: none;
+            color: black;
+            background-color: #3b9ea5;
+            box-shadow: -0.6px 0.6px 2px black;
+            padding: 7px;
+            border-radius: 20px;
+        }
+
+        main {
+            background-color: rgb(228, 240, 250);
+            width: 90%;
+            margin: auto;
+            max-width: 700px;
+            box-shadow: -2px 2px 7px black;
+            padding: 20px 20px 20px 10px;
+            transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor de fundo */
+        }
+        body {
+            margin-top: 120px
+
+        }
+        body::before
+        {
+            content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(prado-bahia-baleia-jubarte3.jpg);
+        filter: blur(5px);
+        z-index: -1;
+        pointer-events: none;
+        }
+        h2 {
+            color: #166a75;
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #295375;
+            margin-left: 15px;
+            margin-right: 40px;
+        }
+
+        button {
+            cursor: pointer;
+            margin: auto;
+            max-width: 600;
+            background-color: #3498db;;
+            border: none;
+            color: aliceblue;
+            padding: 10px 20px;
+            font-size: 23;
+            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 20px;
+            transition: transform 0.2s;
+            box-shadow: -0.6px 0.6px 2px black;
+        }
+
+        button:hover {
+            transform: scale(1.10);
+        }
+
+        .tst {
+            margin-top: 3px;
+            text-align: center;
+            margin-right: 40px;
+            margin-left: 40px;
+            max-width: 100%;
+            margin: auto;
+            width: auto;
+            transition: transform 0.2s;
+            display: flex;
+        }
+
+        iframe {
+            max-width: 100%;
+            width: 100%;
+            background-color: #3498db;;
+            padding: 6px 6px 6px 6px;
+           margin-left: -1px;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+        .button-container {
+            text-align: center;
+            font-size: 13px;
+            margin-top: -10px;
+        }
+
+        img:hover {
+            transform: scale(1.055);
+        }
+
+        img:active {
+            transform: scale(0.95);
+        }
+
+        .link-sem {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+        .tst:hover {
+            transform: scale(1.10);
+        }
+
+        .tst:active {
+            transform: scale(0.95);
+        }
+
+        .p2 {
+            margin-left: auto;
+            margin-right: auto;
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        /* Dark Mode Button Styling */
+        #darkModeButton {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .dark-mode main {
+            background-color: rgba(17, 17, 17, 0.897);
+            color: white;
+        }
+        .dark-mode h2 {
+            color: #166a75;
+        }
+        .dark-mode h1 {
+            color: #298f9c;
+        }
+
+
+        header {
+    top: 0;
+    left: 0;
+    right: 0px;
+    width: 3000px;
+    box-sizing: border-box;
+    max-width: 100%;
+    position: absolute;
+    background-color: rgb(43, 152, 172);
+    color: white;
+    height: 110px;
+    padding: 10px;
+}
+
+
+        .rsociais {
+            text-align: center;
+            color: aliceblue;
+        }
+        #rso 
+        {
+            color: white;
+            margin-top: 1.5%;
+            text-align: center;
+        }
+        #rso2 {
+            display: none;
+            align-items: center;
+            margin-top: -300px;
+            margin-left: 500;
+            padding: 5px 10px;
+        }
+        .brso2 {
+            text-align: center;
+            margin-top: -20px;
+            margin-left: 360px;
+            padding: 0px 0px;
+        }
+        .dark-mode header {
+            background-color: #3f85c2;
+        }
+        #options-menu {
+            display: none;
+            position: absolute;
+            background-color: #3498db;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 120px;
+            right: 20px;
+            top: 60px;
+            animation: fade 0.3s;
+            z-index: 999;
+        }
+        #menu.show-menu #options-menu {
+            display: block;
+        }
+        #menu {
+            position: absolute;
+            top: 32px;
+            right: 20px;
+            z-index: 999;
+            cursor: pointer;
+        }
+        #menu-icon {
+            font-size: 24px;
+            display: block;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #options-menu-top {
+            display: none;
+            position: absolute;
+            background-color: #3498db;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 10px;
+            min-width: 120px;
+            right: 20px;
+            top: 60px;
+            animation: fade 0.3s;
+            z-index: 999; }
+        #menu.show-menu #options-menu-top {
+            display: block; 
+        }
+        .hamburger-menu {
+            display: block;
+            cursor: pointer;
+        }
+
+        .hamburger-menu span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .hamburger-menu.open span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger-menu.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.open span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hamburger-menu:active > #menu2
+        {
+            display: block;
+        }
+        #menu2 {
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    z-index: 998;
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 120px;
+        }
+        #menu3 {
+    text-align: center;
+    display: none;
+    position: absolute;
+    top: 110px;
+    right: 20px;
+    z-index: 998;
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 120px;}
+            .prq {
+                font-size: 12px;
+                margin-top: -6px;
+                margin-left: 70px;
+                margin-right: 40px;
+            }
+            img {
+                margin-top: -30px;
+                background-color: #257463;
+                border-radius: 50%;
+                padding: 4px;
+                margin-top: -6px;
+                margin-right: 40px;
+                margin-left: 40px;
+                max-width: 100%;
+                margin: auto;
+                width: auto;
+                transition: transform 0.2s;
+            }
+
+            .container {
+                width: 100%;
+                text-align: center;
+                margin: auto;
+                width: auto;
+                margin-right: 40px;
+                margin-left: 40px;
+                max-width: 100%;
+            }
+            .inner {
+                position: relative;
+                margin: auto;
+                width: auto;
+                max-width: 100%;
+            }
+            .image {
+                background-color: #166a75;
+                padding: 5px 5px 5px 5px;
+                border-radius: 0%;
+                margin: auto;
+                width: auto;
+                max-width: 100%;
+            }
+            
+            .img6 {
+                text-align: center;
+            }
+            .vestibulinho {
+                margin-top: -10px;
+                text-align: center;
+                font-size: 12px;
+            }
+            .vestibulinho:hover 
+            {
+                color: rgb(236, 247, 246);
+            }
+            audio {
+               max-width: 100%;
+            }
+            .containeraudio {
+                text-align: center;
+            }
+    </style>
+</head>
+<header>
+    <div class="rsociais">
+        <h1 id="rso">Pirapuã - Jubarte</h1>
+
+    </div>
+    <div class="brso2">
+        <button id="rso2"><b>Instagram</b></button>
+    </div>  
+    <TST>
+        <div id="menu" class="hamburger-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          
+          <div id="menu2">Em Breve</div>
+          <div id="menu3">Em Breve</div>
+</header>
+<body>
+    <main class="conteud">
+        <h1>Conheça mais sobre a baleia Jubarte</h1>
+        <h2>Jubarte - Megaptera novaeangliae</h2>
+        <p class="p2">A baleia-jubarte (Megaptera novaeangliae) é uma espécie de baleia conhecida por suas impressionantes acrobacias e longas canções. Elas possuem barbatanas peitorais longas e uma corcunda distinta, de onde deriva seu nome.</p>
+        <p>
+        <a href="prado-bahia-baleia-jubarte3.jpg" target="_blank"><div class="container">
+            <div class="inner">
+                <img src="prado-bahia-baleia-jubarte3.jpg" alt="tst" class="image"></div>
+        </div></a></p>
+        <p class="prq">Jubarte Nadando. Fonte: (https://www.tempo.com)</p>
+
+        <h2> Tempo de Vida</h2>
+
+        <p class="p2">As baleias-jubarte podem viver entre 45 a 50 anos, embora algumas possam alcançar idades ainda mais avançadas. A longevidade dessas baleias depende de diversos fatores, incluindo a disponibilidade de alimento e as condições do meio ambiente.</h2>
+
+            <h2>
+            Importância no Meio Ambiente
+            </h2>
+
+        <p class="p2">As baleias-jubarte desempenham um papel crucial nos ecossistemas marinhos. Elas ajudam na ciclagem de nutrientes através do fenômeno conhecido como "bomba de baleia". Quando se alimentam em águas profundas e defecam em águas superficiais, elas enriquecem essas áreas com nutrientes essenciais, promovendo o crescimento de fitoplâncton, que é a base da cadeia alimentar marinha.</p>
+
+        <h1>Migrações</h1>
+
+        <h2>Epoca de migração</h2>
+        <p class="p2"> As baleias-jubarte são conhecidas por suas longas migrações anuais. Elas passam o verão em águas polares ricas em alimentos e migram para águas tropicais e subtropicais durante o inverno para se reproduzir e dar à luz. No Brasil, a temporada de reprodução ocorre entre os meses de julho e novembro.
+
+            <h2>Principais Rotas de Migração</h2>
+
+            <p class="p2"><b>Arquipélago de Abrolhos (Bahia):</b> Este é o principal local de reprodução das baleias-jubarte no Atlântico Sul. É uma área protegida e importante para a conservação da espécie.</p>
+
+                <p class="p2"><b>Litoral de Santa Catarina:</b> Algumas baleias podem ser avistadas ao longo da costa sul do Brasil, especialmente ao redor da Ilha de Santa Catarina.</p>
+
+                <p class="p2"><b>Litoral do Espírito Santo:</b> Outro ponto importante de avistamento e migração das jubartes.</p>
+
+                <p class="p2"><b>São Sebastião:</b>São Sebastião está localizado ao longo da rota migratória das baleias-jubarte. Durante os meses de inverno no Hemisfério Sul, essas baleias migram das áreas de alimentação nas regiões polares para áreas tropicais e subtropicais, onde se reproduzem e dão à luz. São Sebastião se encontra nessa rota entre as áreas de alimentação no Atlântico Sul e as áreas de reprodução no litoral da Bahia e Espírito Santo.</p>
+
+                <p class="p2"><b>São Sebastião</b> é uma rota de migração importante para as jubartes. Suas águas calmas e protegidas oferecem um local de descanso para as baleias durante sua longa jornada. A presença das jubartes nesta área proporciona excelentes oportunidades para o turismo de observação de baleias, promovendo a conscientização e a conservação da espécie.</p>
+
+                <h2> Importância Econômica e Turística</h2>
+                <p class="p2">
+                        <b>Turismo</b> A presença das baleias-jubarte no litoral brasileiro tem uma grande importância econômica e turística. O turismo de observação de baleias é uma atividade popular que atrai visitantes do mundo todo, gerando receitas significativas para as comunidades locais e promovendo a conscientização sobre a conservação da vida marinha.
+                    
+                    <h2>Conservação:</h2>
+
+                    <p class="p2">Embora o Poraquê não seja frequentemente alvo direto de caça, a degradação do seu habitat e a poluição dos rios ameaçam sua sobrevivência. Esforços de conservação são cruciais para proteger não apenas o Poraquê, mas todo o ecossistema amazônico. Medidas como a preservação de áreas naturais e regulamentações ambientais são essenciais para garantir a continuidade dessa espécie única.</p>
+
+                    <h2>Curiosidades</h2>
+
+                    <p class="p2"><b>Canto das Baleias:</b> Os machos são conhecidos por suas complexas canções, que podem durar até 20 minutos e ser ouvidas a quilômetros de distância. Acredita-se que essas canções desempenhem um papel na atração de fêmeas durante a época de acasalamento.</p>
+
+                    <p class="p2"><b>Saltos e Acrobacias:</b> As jubartes são famosas por seus saltos espetaculares fora da água, comportamento que ainda intriga cientistas, mas que pode estar relacionado à comunicação, acasalamento ou simples diversão.</p>
+                    
+                    <h2>Conclusão:</h2>
+                    <p class="p2">As baleias-jubarte são essenciais para os ecossistemas marinhos e têm um impacto significativo no turismo sustentável e na pesquisa científica no Brasil. Vivendo em média 45 a 50 anos, elas ajudam na ciclagem de nutrientes no oceano.
+
+                        <p class="p2">As jubartes migram anualmente das águas polares para áreas tropicais e subtropicais, passando por importantes pontos no Brasil, como o Arquipélago de Abrolhos, Santa Catarina, Espírito Santo e São Sebastião. São Sebastião, em particular, é um ponto crucial devido às suas águas calmas que oferecem descanso para as baleias durante a migração.</p>
+                        
+                        <p class="p2">A presença das jubartes promove o ecoturismo e a conscientização ambiental, enquanto projetos de conservação, como os do Instituto Baleia Jubarte, são vitais para sua proteção. A preservação das baleias-jubarte é essencial para a saúde dos oceanos e a biodiversidade marinha, beneficiando tanto o meio ambiente quanto a humanidade.</p></p>
+        <tst>
+            <p class="tst"><jl><a href="https://www.instagram.com/etecdecaraguatatuba/" target="_blank" class="link-sem">Etec Caraguatatuba</a></jl></p>
+        </tst></div>
+        <div id="img2">
+            
+            <foto2><p><a href="https://www.vestibulinhoetec.com.br/unidades-cursos/escola.asp?c=230" target="_blank"><div class="img6"><img src="etec3.png" alt=""></div></a></p></div></foto2>
+            <p class="vestibulinho">Clique na foto para informações do vestibulinho.</p>
+        </div>
+        </a>
+        <p>
+
+            <div class="containeraudio">
+                <audio id="meuAudio" src="ElevenLabs_2024-06-19T15_38_35_Adam_pre_s50_sb75_se0_b_m2.mp3" controls preload="metadata"></audio>
+            </div>
+        </p>
+        <p></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/eBSvl_gxO60?si=jn4VH6YMLrskvQ5O" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <button id="darkModeButton" onclick="toggleDarkMode()">Dark Mode</button>
+        <form action=""></form>
+
+    </main>
+
+    <script>
+        const body = document.body;
+
+        function toggleDarkMode() {
+            body.classList.toggle("dark-mode");
+        }
+        function toggleMenu() {
+    var menu = document.getElementById('menu');
+    menu.classList.toggle('open');
+    
+    // Mostra ou esconde o #menu2 ao clicar no hamburguer
+    var menu2 = document.getElementById('menu2');
+    menu2.style.display = menu.classList.contains('open') ? 'block' : 'none';
+    var menu3 = document.getElementById('menu3');
+    menu3.style.display = menu.classList.contains('open') ? 'block' : 'none';
+    
+    document.getElementById('options-menu').classList.toggle('show-menu');
+    document.getElementById('options-menu-top').classList.toggle('show-menu');
+    
+  }
+  window.onload = function() {
+    var audio = document.getElementById("meuAudio");
+    audio.volume = 0.5; // Define o volume para 50%
+};
+  
+    </script>
+</body>
+
+</html>
